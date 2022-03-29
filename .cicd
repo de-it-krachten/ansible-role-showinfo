@@ -9,6 +9,10 @@ generic:
 
 # Supported platforms
 platforms:
+  - name: Red Hat Enterprise Linux 7
+    ci: false
+  - name: Red Hat Enterprise Linux 8
+    ci: false
   - name: CentOS 7
     image: centos7
 #  - name: CentOS 8
