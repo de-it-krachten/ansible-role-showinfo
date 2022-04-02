@@ -21,6 +21,7 @@ platforms:
     image: rockylinux8
   - name: AlmaLinux 8
     image: almalinux8
+    ci: false
   - name: Debian 10 (Buster)
     image: debian10
   - name: Debian 11 (Bullseye)
@@ -73,6 +74,7 @@ molecule:
     - centos7
 #    - centos8
     - rockylinux8
+#    - almalinux8
     - debian10
     - debian11
     - ubuntu1804
