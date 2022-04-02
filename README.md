@@ -14,14 +14,14 @@ Supported platforms
 - Red Hat Enterprise Linux 8<sup>1</sup>
 - CentOS 7
 - RockyLinux 8
-- AlmaLinux 8
+- AlmaLinux 8<sup>1</sup>
 - Debian 10 (Buster)
 - Debian 11 (Bullseye)
 - Ubuntu 18.04 LTS
 - Ubuntu 20.04 LTS
 
 Note:
-<sup>1</sup> means no automated testing is performed on these platforms
+<sup>1</sup> : no automated testing is performed on these platforms
 
 Role Variables
 --------------
