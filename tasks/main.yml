@@ -1,7 +1,7 @@
 ---
 
 - name: Show OS specifics of the host
-  debug:
+  ansible.builtin.debug:
     msg: >
       {
         "ansible_distribution": "{{ ansible_distribution }}",
