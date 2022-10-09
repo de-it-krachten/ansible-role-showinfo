@@ -1,1 +1,14 @@
 ---
+
+# List of default variables to display
+showinfo_vars:
+  - ansible_distribution
+  - ansible_distribution_version
+  - ansible_distribution_release
+  - ansible_distribution_major_version
+  - ansible_os_family
+  - ansible_virtualization_type
+
+# List of additional variables to display
+# Add custom variabled to this list
+showinfo_vars_additional: []

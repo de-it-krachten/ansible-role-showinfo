@@ -3,7 +3,17 @@
 
 # ansible-role-showinfo
 
-Show basic platform information using facts
+Show basic platform information using facts 
+
+
+
+## Dependencies
+
+#### Roles
+None
+
+#### Collections
+- community.general
 
 ## Platforms
 
@@ -25,6 +35,7 @@ Supported platforms
 - Ubuntu 22.04 LTS
 - Fedora 35
 - Fedora 36
+- Alpine 3
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
@@ -32,8 +43,20 @@ Note:
 ## Role Variables
 ### defaults/main.yml
 <pre><code>
+# List of default variables to display
+showinfo_vars:
+  - ansible_distribution
+  - ansible_distribution_version
+  - ansible_distribution_release
+  - ansible_distribution_major_version
+  - ansible_os_family
+  - ansible_virtualization_type
 
+# List of additional variables to display
+# Add custom variabled to this list
+showinfo_vars_additional: []
 </pre></code>
+
 
 
 
@@ -45,6 +68,6 @@ Note:
   become: "{{ molecule['converge']['become'] | default('yes') }}"
   tasks:
     - name: Include role 'showinfo'
-      include_role:
+      ansible.builtin.include_role:
         name: showinfo
 </pre></code>

@@ -6,3 +6,9 @@ generic:
   role_short: showinfo
   role_description: |
     Show basic platform information using facts 
+
+# Platforms
+platforms:
+  alpine3:
+    ci: true
+    supported: true
