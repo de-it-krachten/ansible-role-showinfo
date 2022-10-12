@@ -1,13 +1,14 @@
 ---
 
-- name: Show OS specifics of the host
-  debug:
-    msg: >
+- name: Construct dict
+  ansible.builtin.set_fact:
+    showinfo_output: >-
       {
-        "ansible_distribution": "{{ ansible_distribution }}",
-        "ansible_distribution_version": "{{ ansible_distribution_version }}",
-        "ansible_distribution_release": "{{ ansible_distribution_release }}",
-        "ansible_distribution_major_version": "{{ ansible_distribution_major_version }}",
-        "ansible_os_family": "{{ ansible_os_family }}",
-        "ansible_virtualization_type": "{{ ansible_virtualization_type }}"
+        {% for var in showinfo_vars + showinfo_vars_additional %}
+        "{{ var }}": "{{ vars[var] }}"{% if not loop.last %},{% endif %}
+        {% endfor %}
       }
+
+- name: Show OS specifics of the host
+  ansible.builtin.debug:
+    msg: "{{ showinfo_output }}"
