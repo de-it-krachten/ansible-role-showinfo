@@ -1,5 +1,9 @@
 ---
 
+- name: Redefine some variables
+  ansible.builtin.set_fact:
+    ansible_python_executable: "{{ ansible_python.executable }}"
+
 - name: Construct dict
   ansible.builtin.set_fact:
     showinfo_output: >-
