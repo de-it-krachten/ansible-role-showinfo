@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/de-it-krachten/ansible-role-showinfo/compare/v1.3.0...v1.4.0) (2022-11-27)
+
+
+### Features
+
+* Add Python information ([7fc45f6](https://github.com/de-it-krachten/ansible-role-showinfo/commit/7fc45f61b1b07651d3c0779f8b11fdcaa7560f7b))
+
 # [1.3.0](https://github.com/de-it-krachten/ansible-role-showinfo/compare/v1.2.0...v1.3.0) (2022-10-12)
 
 
