@@ -8,6 +8,8 @@ showinfo_vars:
   - ansible_distribution_major_version
   - ansible_os_family
   - ansible_virtualization_type
+  - ansible_python_version
+  - ansible_python_executable
 
 # List of additional variables to display
 # Add custom variabled to this list
