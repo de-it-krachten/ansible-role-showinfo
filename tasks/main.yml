@@ -3,13 +3,18 @@
 - name: Redefine some variables
   ansible.builtin.set_fact:
     ansible_python_executable: "{{ ansible_python.executable }}"
+    cpu_virtualization_support: "{{ ansible_local.cpu.virtualization_support | bool }}"
 
 - name: Construct dict
   ansible.builtin.set_fact:
     showinfo_output: >-
       {
         {% for var in showinfo_vars + showinfo_vars_additional %}
+        {% if ( vars[var] | type_debug ) is search('^(bool|int)$') %}
+        "{{ var }}": {{ vars[var] }}{% if not loop.last %},{% endif %}
+        {% else %}
         "{{ var }}": "{{ vars[var] }}"{% if not loop.last %},{% endif %}
+        {% endif %}
         {% endfor %}
       }
 
