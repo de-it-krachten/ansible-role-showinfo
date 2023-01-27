@@ -10,7 +10,7 @@
     showinfo_output: >-
       {
         {% for var in showinfo_vars + showinfo_vars_additional %}
-        {% if ( vars[var] | type_debug ) is search('^(bool|int)$') %}
+        {% if (vars[var] | type_debug) is search('^(bool|int)$') %}
         "{{ var }}": {{ vars[var] }}{% if not loop.last %},{% endif %}
         {% else %}
         "{{ var }}": "{{ vars[var] }}"{% if not loop.last %},{% endif %}
