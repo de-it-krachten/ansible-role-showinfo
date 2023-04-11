@@ -7,6 +7,8 @@ showinfo_vars:
   - ansible_distribution_release
   - ansible_distribution_major_version
   - ansible_os_family
+  - ansible_memtotal_mb
+  - ansible_processor_vcpus
   - cpu_virtualization_support
   - ansible_virtualization_type
   - ansible_virtualization_role
