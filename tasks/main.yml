@@ -1,15 +1,32 @@
 ---
 
-- name: Redefine some variables
+- name: Redefine some variables  # noqa jinja[spacing]
   ansible.builtin.set_fact:
-    ansible_python_executable: "{{ ansible_python.executable }}"
+    ansible_python_executable: >-
+      {%- if ansible_python.executable is defined -%}
+      {{ ansible_python.executable }}
+      {%- else -%}
+      N/A
+      {%- endif -%}
+    cpu_virtualization_support: >-
+      {%- if ansible_local.cpu.virtualization_support is defined -%}
+      {{ ansible_local.cpu.virtualization_support | bool }}
+      {%- else -%}
+      UNKNOWN
+      {%- endif -%}
 
 - name: Construct dict
   ansible.builtin.set_fact:
     showinfo_output: >-
       {
         {% for var in showinfo_vars + showinfo_vars_additional %}
+        {% if vars[var] is defined %}
+        {% if (vars[var] | type_debug) is search('^(bool|int)$') %}
+        "{{ var }}": {{ vars[var] }}{% if not loop.last %},{% endif %}
+        {% else %}
         "{{ var }}": "{{ vars[var] }}"{% if not loop.last %},{% endif %}
+        {% endif %}
+        {% endif %}
         {% endfor %}
       }
 

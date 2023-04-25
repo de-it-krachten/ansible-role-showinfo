@@ -34,8 +34,8 @@ Supported platforms
 - Ubuntu 18.04 LTS
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
-- Fedora 35
 - Fedora 36
+- Fedora 37
 - Alpine 3
 
 Note:
@@ -51,9 +51,14 @@ showinfo_vars:
   - ansible_distribution_release
   - ansible_distribution_major_version
   - ansible_os_family
+  - ansible_memtotal_mb
+  - ansible_processor_vcpus
+  - cpu_virtualization_support
   - ansible_virtualization_type
+  - ansible_virtualization_role
   - ansible_python_version
   - ansible_python_executable
+  - ansible_powershell_version
 
 # List of additional variables to display
 # Add custom variabled to this list
@@ -69,6 +74,8 @@ showinfo_vars_additional: []
 - name: sample playbook for role 'showinfo'
   hosts: all
   become: "yes"
+  roles:
+    - deitkrachten.showinfo
   tasks:
     - name: Include role 'showinfo'
       ansible.builtin.include_role:
