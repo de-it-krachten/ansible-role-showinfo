@@ -1,6 +1,6 @@
 ---
 
-- name: Redefine some variables
+- name: Redefine some variables  # noqa jinja[spacing]
   ansible.builtin.set_fact:
     ansible_python_executable: >-
       {%- if ansible_python.executable is defined -%}
