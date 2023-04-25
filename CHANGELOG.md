@@ -1,3 +1,12 @@
+# [1.5.0](https://github.com/de-it-krachten/ansible-role-showinfo/compare/v1.4.0...v1.5.0) (2023-04-25)
+
+
+### Features
+
+* Add cpu/memory ([73a048e](https://github.com/de-it-krachten/ansible-role-showinfo/commit/73a048e221b0289dc6dcff9c5866edf12b28396a))
+* Add support for Windows ([1453b2e](https://github.com/de-it-krachten/ansible-role-showinfo/commit/1453b2ec196363c9e6a73bde7c39d39a46af1526))
+* Update CI/README/Platforms ([bbdfd08](https://github.com/de-it-krachten/ansible-role-showinfo/commit/bbdfd08fd1d43f5b12aa04902e9ac103805c1885))
+
 # [1.4.0](https://github.com/de-it-krachten/ansible-role-showinfo/compare/v1.3.0...v1.4.0) (2022-11-27)
 
 
