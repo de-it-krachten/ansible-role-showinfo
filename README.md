@@ -74,8 +74,6 @@ showinfo_vars_additional: []
 - name: sample playbook for role 'showinfo'
   hosts: all
   become: "yes"
-  roles:
-    - deitkrachten.showinfo
   tasks:
     - name: Include role 'showinfo'
       ansible.builtin.include_role:
