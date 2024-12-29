@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/de-it-krachten/ansible-role-showinfo/compare/v1.7.0...v1.8.0) (2024-12-29)
+
+
+### Features
+
+* Update supported platforms & CI ([50a8f59](https://github.com/de-it-krachten/ansible-role-showinfo/commit/50a8f598ec383a896fe3275b5e367e13c4198fd6))
+
 # [1.7.0](https://github.com/de-it-krachten/ansible-role-showinfo/compare/v1.6.0...v1.7.0) (2024-06-03)
 
 
