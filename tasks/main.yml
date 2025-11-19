@@ -17,19 +17,10 @@
 
 - name: Construct dict
   ansible.builtin.set_fact:
-    showinfo_output: >-
-      {
-        {% for var in showinfo_vars + showinfo_vars_additional %}
-        {% if vars[var] is defined %}
-        {% if (vars[var] | type_debug) is search('^(bool|int)$') %}
-        "{{ var }}": {{ vars[var] }}{% if not loop.last %},{% endif %}
-        {% else %}
-        "{{ var }}": "{{ vars[var] }}"{% if not loop.last %},{% endif %}
-        {% endif %}
-        {% endif %}
-        {% endfor %}
-      }
+    showinfo_output: "{{ showinfo_output | default({}) | combine({ item: vars[item] }) }}"
+  loop: "{{ showinfo_vars + showinfo_vars_additional }}"
+  when: vars[item] is defined
 
 - name: Show OS specifics of the host
   ansible.builtin.debug:
-    msg: "{{ showinfo_output }}"
+    var: showinfo_output
