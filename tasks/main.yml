@@ -17,7 +17,7 @@
 
 - name: Construct dict
   ansible.builtin.set_fact:
-    showinfo_output: "{{ showinfo_output | default({}) | combine({ item: vars[item] }) }}"
+    showinfo_output: "{{ showinfo_output | default({}) | combine({item: vars[item]}) }}"
   loop: "{{ showinfo_vars + showinfo_vars_additional }}"
   when: vars[item] is defined
 
