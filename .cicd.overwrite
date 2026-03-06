@@ -7,8 +7,22 @@ generic:
   role_description: |
     Show basic platform information using facts 
 
-# Platforms
+# Supported platforms
 platforms:
-  alpine3:
-    ci: true
+  sles15:
     supported: true
+    ci: false
+  sles16:
+    supported: true
+    ci: false
+  opensuse15:
+    supported: true
+    ci: true
+  opensuse16:
+    supported: true
+    ci: true
+  alpine3:
+    supported: true
+    ci: true
+
+# Platforms
