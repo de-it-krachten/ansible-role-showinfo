@@ -31,8 +31,6 @@ Supported platforms
 - AlmaLinux 8
 - AlmaLinux 9
 - AlmaLinux 10
-- SUSE Linux Enterprise 15<sup>1</sup>
-- openSUSE Leap 15
 - Debian 11 (Bullseye)
 - Debian 12 (Bookworm)
 - Debian 13 (Trixie)
@@ -44,6 +42,7 @@ Supported platforms
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
+
 
 ## Role Variables
 ### defaults/main.yml
