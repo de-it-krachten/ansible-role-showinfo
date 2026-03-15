@@ -1,3 +1,11 @@
+# [1.10.0](https://github.com/de-it-krachten/ansible-role-showinfo/compare/v1.9.0...v1.10.0) (2026-03-15)
+
+
+### Features
+
+* Drop support for openSUSE Leap 15 ([54ea631](https://github.com/de-it-krachten/ansible-role-showinfo/commit/54ea631fd642247013c075c59f560ca6cdb0f040))
+* Drop support for SUSE Linux Enterprise 15 ([1121fa9](https://github.com/de-it-krachten/ansible-role-showinfo/commit/1121fa9beb6adc5239b4a2ef4fbf5825d6ee8154))
+
 # [1.9.0](https://github.com/de-it-krachten/ansible-role-showinfo/compare/v1.8.0...v1.9.0) (2025-08-07)
 
 
