@@ -1,0 +1,21 @@
+---
+{% for key in (showinfo_vars + showinfo_vars_additional) %}
+{% if key is search('^ansible_facts\.') %}
+{% set k1 = 'ansible_facts' %}
+{% set k2 = key | regex_replace('^ansible_facts\.') %}
+{% set value = lookup('vars', k1) | json_query(k2) %}
+{% elif key is search('^ansible_local\.') %}
+{% set k1 = 'ansible_local' %}
+{% set k2 = key | regex_replace('^ansible_local\.') %}
+{% set value = lookup('vars', k1) | json_query(k2) %}
+{% elif key is search('^ansible_') %}
+{% set k1 = 'ansible' %}
+{% set k2 = key | regex_replace('^ansible_') %}
+{% set value = lookup('vars', k1) | json_query(k2) %}
+{% else %}
+{% set value = lookup('vars', key) | default('XXX') %}
+{% endif %}
+{% if value != None and value != 'XXX' %}
+{{ key }}: {{ value }}
+{% endif %}
+{% endfor %}

@@ -9,12 +9,12 @@ showinfo_vars:
   - ansible_facts.os_family
   - ansible_facts.memtotal_mb
   - ansible_facts.processor_vcpus
-  - cpu_virtualization_support
   - ansible_facts.virtualization_type
   - ansible_facts.virtualization_role
   - ansible_facts.python_version
-  - ansible_facts.python_executable
+  - ansible_facts.python.executable
   - ansible_facts.powershell_version
+  - ansible_local.cpu.virtualization_support
 
 # List of additional variables to display
 # Add custom variabled to this list
