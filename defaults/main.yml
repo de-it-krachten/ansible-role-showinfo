@@ -2,19 +2,19 @@
 
 # List of default variables to display
 showinfo_vars:
-  - ansible_distribution
-  - ansible_distribution_version
-  - ansible_distribution_release
-  - ansible_distribution_major_version
-  - ansible_os_family
-  - ansible_memtotal_mb
-  - ansible_processor_vcpus
+  - ansible_facts.distribution
+  - ansible_facts.distribution_version
+  - ansible_facts.distribution_release
+  - ansible_facts.distribution_major_version
+  - ansible_facts.os_family
+  - ansible_facts.memtotal_mb
+  - ansible_facts.processor_vcpus
   - cpu_virtualization_support
-  - ansible_virtualization_type
-  - ansible_virtualization_role
-  - ansible_python_version
-  - ansible_python_executable
-  - ansible_powershell_version
+  - ansible_facts.virtualization_type
+  - ansible_facts.virtualization_role
+  - ansible_facts.python_version
+  - ansible_facts.python_executable
+  - ansible_facts.powershell_version
 
 # List of additional variables to display
 # Add custom variabled to this list
