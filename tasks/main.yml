@@ -1,25 +1,8 @@
 ---
 
-- name: Redefine some variables  # noqa jinja[spacing]
-  ansible.builtin.set_fact:
-    ansible_python_executable: >-
-      {%- if ansible_python.executable is defined -%}
-      {{ ansible_python.executable }}
-      {%- else -%}
-      N/A
-      {%- endif -%}
-    cpu_virtualization_support: >-
-      {%- if ansible_local.cpu.virtualization_support is defined -%}
-      {{ ansible_local.cpu.virtualization_support | bool }}
-      {%- else -%}
-      UNKNOWN
-      {%- endif -%}
-
 - name: Construct dict
   ansible.builtin.set_fact:
-    showinfo_output: "{{ showinfo_output | default({}) | combine({item: vars[item]}) }}"
-  loop: "{{ showinfo_vars + showinfo_vars_additional }}"
-  when: vars[item] is defined
+    showinfo_output: "{{ lookup('template', 'templates/vars.yml.j2') | from_yaml }}"
 
 - name: Show OS specifics of the host
   ansible.builtin.debug:

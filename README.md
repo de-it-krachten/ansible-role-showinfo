@@ -36,8 +36,9 @@ Supported platforms
 - Debian 13 (Trixie)
 - Ubuntu 22.04 LTS
 - Ubuntu 24.04 LTS
-- Fedora 42
+- Ubuntu 26.04 LTS
 - Fedora 43
+- Fedora 44<sup>1</sup>
 - Alpine 3
 
 Note:
@@ -49,19 +50,19 @@ Note:
 <pre><code>
 # List of default variables to display
 showinfo_vars:
-  - ansible_distribution
-  - ansible_distribution_version
-  - ansible_distribution_release
-  - ansible_distribution_major_version
-  - ansible_os_family
-  - ansible_memtotal_mb
-  - ansible_processor_vcpus
-  - cpu_virtualization_support
-  - ansible_virtualization_type
-  - ansible_virtualization_role
-  - ansible_python_version
-  - ansible_python_executable
-  - ansible_powershell_version
+  - ansible_facts.distribution
+  - ansible_facts.distribution_version
+  - ansible_facts.distribution_release
+  - ansible_facts.distribution_major_version
+  - ansible_facts.os_family
+  - ansible_facts.memtotal_mb
+  - ansible_facts.processor_vcpus
+  - ansible_facts.virtualization_type
+  - ansible_facts.virtualization_role
+  - ansible_facts.python_version
+  - ansible_facts.python.executable
+  - ansible_facts.powershell_version
+  - ansible_local.cpu.virtualization_support
 
 # List of additional variables to display
 # Add custom variabled to this list
