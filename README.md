@@ -66,6 +66,9 @@ showinfo_vars:
 # List of additional variables to display
 # Add custom variabled to this list
 showinfo_vars_additional: []
+
+# Show info on control node
+showinfo_control_node: false
 </pre></code>
 
 
@@ -77,6 +80,9 @@ showinfo_vars_additional: []
 - name: sample playbook for role 'showinfo'
   hosts: all
   become: 'yes'
+  vars:
+    molecule_driver: '{{ lookup(''env'', ''MOLECULE_DRIVER_NAME'') }}'
+    showinfo_control_node: true
   tasks:
     - name: Include role 'showinfo'
       ansible.builtin.include_role:

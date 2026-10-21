@@ -14,3 +14,7 @@ platforms:
     ci: true
 
 # Platforms
+molecule:
+  converge:
+    vars:
+      showinfo_control_node: true
