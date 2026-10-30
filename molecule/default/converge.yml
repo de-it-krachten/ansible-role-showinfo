@@ -3,6 +3,9 @@
 - name: Converge
   hosts: all
   become: "yes"
+  vars:
+    molecule_driver: "{{ lookup('env', 'MOLECULE_DRIVER_NAME') }}"
+    showinfo_control_node: True
   tasks:
     - name: Include role 'ansible-role-showinfo'
       ansible.builtin.include_role:

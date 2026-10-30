@@ -19,3 +19,6 @@ showinfo_vars:
 # List of additional variables to display
 # Add custom variabled to this list
 showinfo_vars_additional: []
+
+# Show info on control node
+showinfo_control_node: false

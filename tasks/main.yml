@@ -1,9 +1,10 @@
 ---
 
-- name: Construct dict
-  ansible.builtin.set_fact:
-    showinfo_output: "{{ lookup('template', 'templates/vars.yml.j2') | from_yaml }}"
+- name: Show information on control node
+  ansible.builtin.include_tasks:
+    file: control-node.yml
+  when: showinfo_control_node | bool
 
-- name: Show OS specifics of the host
-  ansible.builtin.debug:
-    var: showinfo_output
+- name: Show information on managed nodes
+  ansible.builtin.include_tasks:
+    file: managed-node.yml

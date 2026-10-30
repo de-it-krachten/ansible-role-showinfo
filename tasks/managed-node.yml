@@ -1,0 +1,9 @@
+---
+
+- name: Construct dict
+  ansible.builtin.set_fact:
+    showinfo_output: "{{ lookup('template', 'templates/vars.yml.j2') | from_yaml }}"
+
+- name: Show OS specifics of the host
+  ansible.builtin.debug:
+    var: showinfo_output
