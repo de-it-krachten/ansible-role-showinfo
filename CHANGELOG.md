@@ -1,3 +1,11 @@
+# [1.12.0](https://github.com/de-it-krachten/ansible-role-showinfo/compare/v1.11.0...v1.12.0) (2026-10-30)
+
+
+### Features
+
+* Add support for showing ansible/python on control node ([895b2c2](https://github.com/de-it-krachten/ansible-role-showinfo/commit/895b2c2742471c8c78b478d38617f6a36fbcf7fa))
+* Drop support for Debian 11 (Bullseye) ([4981789](https://github.com/de-it-krachten/ansible-role-showinfo/commit/49817891e1d3e59afd2fdcac28d279235c4d6497))
+
 # [1.11.0](https://github.com/de-it-krachten/ansible-role-showinfo/compare/v1.10.0...v1.11.0) (2026-05-23)
 
 
